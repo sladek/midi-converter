@@ -1,0 +1,19 @@
+build/usb_msd/production/src/system.o:  \
+src/system.c  \
+inc/system.h  \
+ inc/buttons.h  \
+inc/leds.h  \
+inc/io_mapping.h  \
+inc/power.h  \
+ inc/usb_device_config.h  \
+usb/inc/usb.h  \
+inc/usb_device_config.h  \
+ usb/inc/usb_common.h  \
+usb/inc/usb_ch9.h  \
+usb/inc/usb_device.h  \
+ usb/inc/usb_hal.h  \
+usb/inc/usb_hal_pic24f.h  \
+inc/leds.h  \
+inc/buttons.h  \
+ inc/timer.h  \
+inc/system.h 

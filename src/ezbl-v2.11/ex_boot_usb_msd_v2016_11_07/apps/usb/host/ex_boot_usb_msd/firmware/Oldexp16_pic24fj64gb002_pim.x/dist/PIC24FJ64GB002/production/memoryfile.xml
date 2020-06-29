@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <executable name="dist/PIC24FJ64GB002/production/exp16_pic24fj64gb002_pim.x.production.">
+    <memory name="data">
+      <units>bytes</units>
+      <length>8192</length>
+      <used>3454</used>
+      <free>4738</free>
+    </memory>
+    <memory name="program">
+      <units>bytes</units>
+      <length>65268</length>
+      <used>54990</used>
+      <free>10278</free>
+    </memory>
+  </executable>
+</project>
