@@ -9,3 +9,13 @@ Standard MIDI to USB MIDI converter. This converter switches automatically betwe
 - geda - schematics and pcb files
 
 This is just inital version of readme file. All the details and instructions how to use it will be added soon.
+
+## Table of Contents
+* [Source code](#source-code)
+* [Hardware](#hardware)
+
+### Source code
+Source code description will come here
+
+### Hardware
+Description of schematics and PCB will come here
