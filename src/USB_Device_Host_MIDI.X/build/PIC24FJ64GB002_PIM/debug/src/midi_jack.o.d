@@ -1,7 +1,7 @@
-build/usb_msd/production/src/midi_jack.o:  \
+build/PIC24FJ64GB002_PIM/debug/src/midi_jack.o:  \
 src/midi_jack.c  \
-inc/system.h  \
- inc/buttons.h  \
+ inc/system.h  \
+inc/buttons.h  \
 inc/leds.h  \
 inc/io_mapping.h  \
 inc/power.h  \

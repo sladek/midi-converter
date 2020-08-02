@@ -19,4 +19,5 @@ usb/inc/usb_hal_local.h  \
  usb/inc/usb.h  \
 usb/inc/usb_host.h  \
 inc/usb_host_config.h  \
- usb/inc/usb_common.h 
+ usb/inc/usb_common.h  \
+inc/midi_jack.h 

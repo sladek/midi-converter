@@ -26,6 +26,8 @@ please contact mla_licensing@microchip.com
 #include "usb.h"
 #include "usb_device_midi.h"
 
+#include "midi_jack.h"
+
 #include"leds.h"
 
 
@@ -64,6 +66,7 @@ extern uint32_t UARTTranslatedToUSB;
 uint8_t        MIDIDeviceInRxBuffer[MIDI_UART_BUFFER_SIZE];
 uint8_t*       pRxUARTBufDeviceReadLocation;
 uint8_t*       pRxUARTBufDeviceWriteLocation;
+
 uint8_t        UARTDeviceInByteCount;
 
 // uint8_t        MIDIDeviceRxCommandState;
@@ -73,7 +76,7 @@ bool           DeviceBytePending;
 //uint8_t        DeviceTxRunningStatusByte;
 
 // Read location of the buffer from which the data is read;
-static uint8_t*       pTxBufReadLocation;
+//static uint8_t*       pTxBufReadLocation;
 
 
 static USB_HANDLE USBTxHandle;
@@ -122,11 +125,6 @@ void APP_DeviceAudioMIDIInitialize() {
 
     //Re-arm the OUT endpoint for the next packet
     USBRxHandle = USBRxOnePacket(USB_DEVICE_AUDIO_MIDI_ENDPOINT, (uint8_t*) & ReceivedDataBuffer, 64);
-
-
-    MIDI_Jack_Initialize();
-
-
 
 }
 

@@ -14,4 +14,5 @@ usb/inc/usb_ch9.h  \
 usb/inc/usb_hal.h  \
 usb/inc/usb_hal_pic24f.h  \
  usb/inc/usb_device_midi.h  \
+inc/midi_jack.h  \
 inc/leds.h 

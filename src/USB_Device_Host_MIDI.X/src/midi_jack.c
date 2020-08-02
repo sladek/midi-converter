@@ -51,7 +51,7 @@ extern bool        UARTRealTimePacketTranslated;
 
 void MIDI_Jack_Initialize()
 {
-        // Setup circular FIFO for MIDI Out port
+    // Setup circular FIFO for MIDI Out port
     MIDIOutByteCount = 0;
     pTxBufReadLocation = &MIDIOutTxBuffer[0];
     pTxBufWriteLocation = (uint32_t*)&MIDIOutTxBuffer[0];

@@ -53,6 +53,7 @@ bool usb_host_attached = false;
 MAIN_RETURN main(void)
 {
     SYSTEM_Initialize(SYSTEM_STATE_USB_START);
+    MIDI_Jack_Initialize();
     while(1){
 //        scan_state = SCAN_STATE_HOST;
         switch (scan_state) {

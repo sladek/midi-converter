@@ -22,6 +22,7 @@ please contact mla_licensing@microchip.com
 #include "usb_host_midi.h"
 #include "usb_host_local.h"
 #include "usb_common.h"
+#include "midi_jack.h"
 #include <string.h>
 #include <stdio.h>
 #include <stdbool.h>
@@ -32,7 +33,7 @@ please contact mla_licensing@microchip.com
 // *****************************************************************************
 // *****************************************************************************
 void DBG_LED();
-//void MIDI_Host_OutJackTasks(void);
+void MIDI_Host_OutJackTasks(void);
 void MIDI_InJackTasks(void);
 
 // *****************************************************************************
@@ -146,6 +147,7 @@ void APP_HostMIDIBasicInitialize()
     NumGets = 0;
     NumSends = 0;
 
+//    MIDI_Jack_Initialize();
 }
 
 /*********************************************************************
@@ -179,9 +181,9 @@ void APP_HostMIDIBasicTasks()
             MIDI_InJackTasks();
 
             //-----------------------------------------------------------------------------
-            //Check if we received any RX data from the MIDI device attached (MIDI Out port)
+            //Check if we received any TXdata from the MIDI device attached (MIDI Out port)
             //-----------------------------------------------------------------------------
-//            MIDI_Host_OutJackTasks();
+            MIDI_Host_OutJackTasks();
  
             for(currentEndpoint = 0; currentEndpoint < USBHostMIDINumberOfEndpoints(deviceHandle); currentEndpoint++)
             {
@@ -409,7 +411,7 @@ bool APP_HostMIDIBasicEventHandler( uint8_t address, USB_EVENT event, void *data
 //Check if any valid data is currently waiting in the endpoint buffers that needs
 // to be sent over the UART.
 //-----------------------------------------------------------------------------
-/*
+
 void MIDI_Host_OutJackTasks(void)
 {
     int8_t currentEndpoint;
@@ -526,4 +528,4 @@ void MIDI_Host_OutJackTasks(void)
     }//if((MIDIOutByteCount != 0u) && (PIR3bits.TX2IF == 1)) 
 }//void MIDITasks(void)
 
- */
+

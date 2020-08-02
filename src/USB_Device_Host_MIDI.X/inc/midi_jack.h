@@ -51,5 +51,20 @@
 
 void MIDI_Jack_Initialize();
 
+//A circular buffer for storing received bytes from the host, out the UART to the attached device on the MIDI Out port
+extern uint8_t        MIDIOutTxBuffer[MIDI_UART_BUFFER_SIZE];
+extern uint8_t*       pTxBufReadLocation;
+extern uint32_t*      pTxBufWriteLocation;        // This is a double word (4 bytes), since we will be writing a double word at a time
+extern uint8_t        MIDIOutByteCount;
+
+//A circular buffer for storing received bytes from the MIDI (UART), to be sent do attached USB MIDI device
+extern uint8_t        MIDIInRxBuffer[MIDI_UART_BUFFER_SIZE];
+extern uint8_t*       pRxUARTBufReadLocation;
+extern uint8_t*       pRxUARTBufWriteLocation;
+extern uint8_t        UARTInByteCount;
+
+extern uint8_t        RxRunningStatusByte;
+extern uint8_t        TxRunningStatusByte;
+
 #endif	/* MIDI_JACK_H */
 
