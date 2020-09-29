@@ -55,6 +55,8 @@ MAIN_RETURN main(void)
     SYSTEM_Initialize(SYSTEM_STATE_USB_START);
     MIDI_Jack_Initialize();
     while(1){
+// Below line is intended to be used only during debugging some issues
+//  this way you can force the status you want the controller to be in.
 //        scan_state = SCAN_STATE_HOST;
         switch (scan_state) {
             case SCAN_STATE_DEVICE:
@@ -63,7 +65,7 @@ MAIN_RETURN main(void)
                 while(scan_state == SCAN_STATE_DEVICE){
                     USBDeviceTasks();
                     if (USBGetDeviceState() == CONFIGURED_STATE){
-                        // Disable Timet2 as we don't need scanning anymore
+                        // Disable Timer2 as we don't need scanning anymore
                         disableTimer2();
                         LED2_Set_State(LED_STATUS_ON);
                         // And continue as an USB device
